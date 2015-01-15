@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cmath>
+#include<string>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	long long maxx = -10000000000, minx = 10000000000;
+	long long maxy = -10000000000, miny = 10000000000;
+	for (int i = 0; i < n; i++)
+	{
+		long x, y;
+		cin >> x >> y;
+		maxx = x > maxx ? x : maxx;
+		maxy = y > maxy ? y : maxy;
+		minx = x < minx ? x : minx;
+		miny = y < miny ? y : miny;
+	}
+	long long result = max(maxx - minx, maxy - miny);
+
+	cout << result*result << endl;
+	return 0;
+}
